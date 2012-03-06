@@ -100,13 +100,21 @@ Example:
       <speed>5</speed>
     </rocket>
 
-  the MD5 hash of the post data:
+  Now the client has to know the application secret, it must add it to the POST data:
+    <?xml version="1.0" encoding="UTF-8"?>
+    <rocket>
+      <id>42</id>
+      <speed>5</speed>
+    </rocket>
+    SECRET
+    
+  the MD5 hash of the post data with secret:
     82f5aef6d4a4ad710a60b74e0355b74d
 
   here is the URL for the signed request:
     http://montain.mil/private/rockets/launch?app_key=A6G87bqY&signature=82f5aef6d4a4ad710a60b74e0355b74d
   
-  Note that the POST data is left untouched.
+  Note that the POST data is left untouched. (Do not send the secret)
 
 
 == LICENSE:
